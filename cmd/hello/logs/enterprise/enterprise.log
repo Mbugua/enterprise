@@ -1,0 +1,2 @@
+time="2023-05-24 15:02:12" level=info msg="[GET] /log HTTP/1.1 112.921µs" func=github.com/mbugua/enterprise/pkg/logger.writeToFile file="/Users/lee/workspace/enterprise/pkg/logger/main.go:91" fields.level=info fields.time="2023-05-24 15:02:12"
+time="2023-05-24 15:02:16" level=info msg="[GET] /log HTTP/1.1 1.867µs" func=github.com/mbugua/enterprise/pkg/logger.writeToFile file="/Users/lee/workspace/enterprise/pkg/logger/main.go:91" fields.level=info fields.time="2023-05-24 15:02:16"

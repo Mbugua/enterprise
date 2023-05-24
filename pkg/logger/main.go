@@ -5,8 +5,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"path"
-	"runtime"
 	"strconv"
 	"time"
 
@@ -81,10 +79,10 @@ func writeToFile(logData LogData) {
 		DisableColors:   true,
 		FullTimestamp:   true,
 		TimestampFormat: "2006-01-02 15:04:05",
-		CallerPrettyfier: func(f *runtime.Frame) (string, string) {
-			file := path.Base(f.File)
-			return fmt.Sprintf("%s:%d", file, f.Line), ""
-		},
+		// CallerPrettyfier: func(f *runtime.Frame) (string, string) {
+		// 	file := path.Base(f.File)
+		// 	return fmt.Sprintf("%s:%d", file, f.Line), ""
+		// },
 	})
 
 	logrus.WithFields(logrus.Fields{
@@ -95,12 +93,12 @@ func writeToFile(logData LogData) {
 
 func getLogFileName() string {
 	appName := os.Getenv("APP_NAME")
-	fmt.Printf("app name >>  %s", appName)
+	// fmt.Printf("app name >>  %s", appName)
 	if appName == "" {
 		appName = "enterprise"
 	}
 	logDir := os.Getenv("LOG_DIR")
-	fmt.Printf("logs dir >>  %s", logDir)
+	// fmt.Printf("logs dir >>  %s", logDir)
 	if logDir == "" {
 		logDir = "../../logs/" + appName + "/"
 	}

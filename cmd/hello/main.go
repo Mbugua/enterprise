@@ -3,27 +3,11 @@ package main
 import (
 	"log"
 	"net/http"
-	"os"
 
-	"github.com/joho/godotenv"
-	"github.com/mbugua/enterprise/pkg/logging"
+	logging "github.com/mbugua/enterprise/pkg/logger"
 )
 
 func main() {
-	_err := godotenv.Load("../../.env")
-	if _err != nil {
-		log.Fatalf("unable to load env vars. Err: %s", _err)
-	}
-	// Create the log file directory if it doesn't exist
-	logDir := os.Getenv("LOG_DIR")
-	if logDir == "" {
-		logDir = "../../logs/"
-	}
-	err := os.MkdirAll(logDir, 0755)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.info("<< welcome to middleware >>")
 
 	// Create the main handler
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
