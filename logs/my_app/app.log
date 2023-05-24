@@ -1,0 +1,1 @@
+time="2023-05-24 12:43:09" level=info msg="[GET] /log HTTP/1.1 8.227µs" func="main.go:79" fields.level=info fields.time="2023-05-24 12:43:09"
